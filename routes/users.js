@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const plm = require('passport-local-mongoose');
 const folder = require('./folder');
 
-mongoose.connect("mongodb://0.0.0.0/MyDrive")
+mongoose.connect("mongodb+srv://arbazkhan290602:Arbazkhan290602@cluster0.ttk9ral.mongodb.net/")
 .then(function(connected){
     console.log("connected!");
 });

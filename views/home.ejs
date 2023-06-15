@@ -250,7 +250,7 @@
                         <% var update=folder.updatedAt %> 
                         <% dateString=update.toDateString(); %>
                             <div class="upldrow">
-                                <% if(user.starredFolder.indexOf(folder._id)===-1){ %>
+                                 <% if(user.starredFolder.indexOf(folder._id)===-1){ %>
                                     <div class="l">
                                         <div class="fimg">
                                             <a href="#">
@@ -329,109 +329,86 @@
                                     <% var update=file.updatedAt %> 
                                         <% var fs=((file.picSize / (1024 ** 2)).toFixed(1)) %>
                                             <% dateString=update.toDateString(); %>
-                                            <!-- <h1><%= file.picName %></h1> -->
-                                            <div id="upldp" class="upldrow">
-                                                <% if(user.starred.indexOf(file._id)===-1){ %>
-                                                    <div class="l">
-                                                        <% if(file.ext==="jpg" ){ %>
-                                                            <div class="fimg">
-                                                                <a href="#">
-                                                                    <img src="<%= file.pic %>" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <% } %>
-                                                            <% if(file.ext==="webp" ){ %>
-                                                                <div class="fimg">
-                                                                    <a href="#">
-                                                                        <img src="<%= file.pic %>" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <% } %>
-                                                            <% if(file.ext==="png" ){ %>
-                                                                <div class="fimg">
-                                                                    <a href="#">
-                                                                        <img src="<%= file.pic %>" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <% } %>
-                                                            <% if(file.ext==="mp4" ){ %>
-                                                                <div class="fimg">
-                                                                    <a href="#">
-                                                                        <video src="<%= file.pic %>"></video>
-                                                                        <img src="https://drive-thirdparty.googleusercontent.com/32/type/video/mp4" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <% } %>
-                                                                <% if(file.ext==="txt" ){ %>
-                                                                    <div class="fimg">
-                                                                            <a href="#">
-                                                                                <img src="https://drive-thirdparty.googleusercontent.com/32/type/text/plain"
-                                                                                    alt="">
-                                                                            </a>
-                                                                    </div>
-                                                                    <% } %>
-                                                                        <% if(file.ext==="pdf" ){ %>
-                                                                            <div class="fimg">
-                                                                                <a href="#">
-                                                                                    <img src="https://drive-thirdparty.googleusercontent.com/32/type/application/pdf"
-                                                                                        alt="">
-                                                                                </a>
-                                                                            </div>
-                                                                            <% } %>
-                                            
-                                            
-                                                                                <h6>
-                                                                                    <%= file.originalName %>
-                                                                                </h6>
-                                                    </div>
-                                            
-                                                    <%}else{ %>
+                                                    <div id="upldp" class="upldrow" >
+                                                      <% if(user.starred.indexOf(file._id)===-1){ %>
                                                         <div class="l">
                                                             <% if(file.ext==="jpg" ){ %>
                                                                 <div class="fimg">
-                                                                    <a href="#">
-                                                                        <img src="https://drive-thirdparty.googleusercontent.com/32/type/image/jpeg" alt="">
-                                                                    </a>
+                                                                        <img src="<%= file.pic %>" alt="">
                                                                 </div>
                                                                 <% } %>
+                                                                <% if(file.ext==="webp" ){ %>
+                                                                    <div class="fimg">
+                                                                            <img src="<%= file.pic %>" alt="">
+                                                                    </div>
+                                                                    <% } %>
                                                                 <% if(file.ext==="png" ){ %>
                                                                     <div class="fimg">
-                                                                        <a href="#">
-                                                                            <img src="https://drive-thirdparty.googleusercontent.com/32/type/image/jpeg" alt="">
-                                                                        </a>
+                                                                            <img src="<%= file.pic %>" alt="">
                                                                     </div>
                                                                     <% } %>
                                                                 <% if(file.ext==="mp4" ){ %>
                                                                     <div class="fimg">
-                                                                        <a href="#">
+                                                                            <video src="<%= file.pic %>"></video>
                                                                             <img src="https://drive-thirdparty.googleusercontent.com/32/type/video/mp4" alt="">
-                                                                        </a>
                                                                     </div>
                                                                     <% } %>
                                                                     <% if(file.ext==="txt" ){ %>
                                                                         <div class="fimg">
-                                                                                <a href="#">
                                                                                     <img src="https://drive-thirdparty.googleusercontent.com/32/type/text/plain"
                                                                                         alt="">
-                                                                                </a>
                                                                         </div>
                                                                         <% } %>
                                                                             <% if(file.ext==="pdf" ){ %>
                                                                                 <div class="fimg">
-                                                                                    <a href="#">
                                                                                         <img src="https://drive-thirdparty.googleusercontent.com/32/type/application/pdf"
                                                                                             alt="">
-                                                                                    </a>
                                                                                 </div>
                                                                                 <% } %>
-                                                                                            <h6>
-                                                                                                <%= file.originalName
-                                                                                                    %>
-                                                                                            </h6>
-                                                                                            <i
-                                                                                                class="ri-star-fill"></i>
+                                                    
+                                                    
+                                                                                    <h6>
+                                                                                        <%= file.originalName %>
+                                                                                    </h6>
                                                         </div>
-                                                        <% } %>
+                                                    
+                                                        <%}else{ %>
+                                                            <div class="l">
+                                                                <% if(file.ext==="jpg" ){ %>
+                                                                    <div class="fimg">
+                                                                            <img src="https://drive-thirdparty.googleusercontent.com/32/type/image/jpeg" alt="">
+                                                                    </div>
+                                                                    <% } %>
+                                                                    <% if(file.ext==="png" ){ %>
+                                                                        <div class="fimg">
+                                                                                <img src="https://drive-thirdparty.googleusercontent.com/32/type/image/jpeg" alt="">
+                                                                        </div>
+                                                                        <% } %>
+                                                                    <% if(file.ext==="mp4" ){ %>
+                                                                        <div class="fimg">
+                                                                                <img src="https://drive-thirdparty.googleusercontent.com/32/type/video/mp4" alt="">
+                                                                        </div>
+                                                                        <% } %>
+                                                                        <% if(file.ext==="txt" ){ %>
+                                                                            <div class="fimg">
+                                                                                        <img src="https://drive-thirdparty.googleusercontent.com/32/type/text/plain"
+                                                                                            alt="">
+                                                                            </div>
+                                                                            <% } %>
+                                                                                <% if(file.ext==="pdf" ){ %>
+                                                                                    <div class="fimg">
+                                                                                            <img src="https://drive-thirdparty.googleusercontent.com/32/type/application/pdf"
+                                                                                                alt="">
+                                                                                    </div>
+                                                                                    <% } %>
+                                                                                                <h6>
+                                                                                                    <%= file.originalName
+                                                                                                        %>
+                                                                                                </h6>
+                                                                                                <i
+                                                                                                    class="ri-star-fill"></i>
+                                                            </div>
+                                                            <% } %>
                                                             <div class="r">
                                                                 <h6>me</h6>
                                                                 <h6 id="h6a">
@@ -444,8 +421,9 @@
                                                                         </h6>
                                                                 </div>
                                                                 <div class="hover_div">
-                                                                    <a href="/starimg/<%= file._id %>"><i
-                                                                            class="ri-user-shared-line"></i></a>
+                                                                    <a href="/starimg/<%= file._id %>">
+                                                                        <i class="ri-user-shared-line"></i>
+                                                                    </a>
                                                                             <a href="/details/<%= file._id %>">
                                                                                 <i class="ri-download-2-fill"></i>
                                                                             </a>
@@ -471,7 +449,7 @@
                                                                     </a>
                                                                 </div>
                                                             </div>
-                                            </div>
+                                                    </div>
                                 <% }) %>
                                                  
 
