@@ -20,7 +20,7 @@ app.use(expressSession({
      maxAge:(24* 60 * 60 * 1000)
   },
   store:mongoStore.create({
-      mongoUrl:'mongodb://0.0.0.0/MyDrive',
+      mongoUrl:'mongodb+srv://arbazkhan290602:Arbazkhan290602@cluster0.ttk9ral.mongodb.net/',
       autoRemove:'disabled'
   },function(err){
       console.log(err|| 'connect mongo setup ok');
